@@ -213,7 +213,11 @@ AbstractNode *ControlModule::instantiate(const Context* /*ctx*/, const ModuleIns
 			// no parameters => all children
 			AbstractNode* node;
 			if (Feature::ExperimentalLazyUnion.is_enabled()) node = new ListNode(inst);
-			else node = new GroupNode(inst);
+			else 
+            {
+                node = new GroupNode(inst);
+                PRINTB("WARNING: DEBUG %d", 2);
+            }
 
 			for (int n = 0; n < (int)modulectx->numChildren(); ++n) {
 				AbstractNode* childnode = modulectx->getChild(n)->evaluate(modulectx);
