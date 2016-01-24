@@ -43,6 +43,7 @@ const std::string &Feature::get_description() const
     
 bool Feature::is_enabled() const
 {
+    PRINTB("DEBUG: Feature %s is: %i", this->name % this->enabled);
 	return enabled;
 }
 
