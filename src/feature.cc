@@ -49,6 +49,7 @@ bool Feature::is_enabled() const
 void Feature::enable(bool status)
 {
 	enabled = status;
+    PRINTB("INFO: Enabled feature %s", this->name);
 }
     
 void Feature::enable_feature(const std::string &feature_name, bool status)
