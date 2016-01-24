@@ -54,7 +54,7 @@ AbstractNode *GroupModule::instantiate(const Context *ctx, const ModuleInstantia
 {
 	(void)ctx; // avoid unusued parameter warning
 
-	AbstractNode *node = new GroupNode(inst);
+	AbstractNode *node = new ListNode(inst);
 
 	node->children = inst->instantiateChildren(evalctx);
 
@@ -198,7 +198,7 @@ AbstractNode *Module::instantiate(const Context *ctx, const ModuleInstantiation 
 	c.dump(this, inst);
 #endif
 
-	AbstractNode *node = new GroupNode(inst);
+	AbstractNode *node = new ListNode(inst);
 	std::vector<AbstractNode *> instantiatednodes = this->scope.instantiateChildren(&c);
 	node->children.insert(node->children.end(), instantiatednodes.begin(), instantiatednodes.end());
 	module_stack.pop_back();
