@@ -912,9 +912,12 @@ int main(int argc, char **argv)
 	}
 #ifdef ENABLE_EXPERIMENTAL
 	if (vm.count("enable")) {
+        PRINTB("INFO: Param enable %s", "");
 		BOOST_FOREACH(const string &feature, vm["enable"].as<vector<string> >()) {
+        PRINTB("INFO: Param enable for %s", feature);
 			Feature::enable_feature(feature);
 		}
+        PRINTB("INFO: Param enable end %s", "");
 	}
 #endif
 	vector<string> inputFiles;
