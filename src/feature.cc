@@ -21,7 +21,7 @@ Feature::list_t Feature::feature_list;
 const Feature Feature::ExperimentalLazyUnion("lazy-union", "Enable lazy unions.");
 
 Feature::Feature(const std::string &name, const std::string &description)
-	: enabled(false), name(name), description(description)
+	: enabled(true), name(name), description(description)
 {
 	feature_map[name] = this;
 	feature_list.push_back(this);
